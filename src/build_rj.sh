@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-RJ_DIR=$HOME/repo/randomjungle ;
+RJ_DIR=`pwd`/.. ;
 RJ_O="" ;
 
 for f in \
@@ -50,3 +50,5 @@ done
 rm librj.a ;
 ar q librj.a $RJ_O ;
 ranlib librj.a ;
+
+g++ -Wall -O3 main.cpp -o randomjungle -Ilibrary -Ilr librj.a -lz -lgsl -lgslcblas -lm -lxml2
